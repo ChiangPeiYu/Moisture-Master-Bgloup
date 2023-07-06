@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi</title>
+    <link rel="stylesheet" href="./front.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+</head>
+
+<body>
+    <div class="data">
+        <div class="title">
+            <h2>&nbsp;<i class="fa-solid fa-mask"></i>&nbsp;溫溼度感測器</h2>
+        </div>
+
+        <div class="data-container">
+            <div class="data-body">
+                <div class="temperature-body ">
+                    <p>溫度:</p>
+                    <div class="fix">
+                        <span id="temperature"></span>
+                        <img src="./sun.png">
+                    </div>
+
+                </div>
+
+                <div class="humidity-body ">
+                    <p>濕度:</p>
+                    <div class="fix">
+                        <span id="humidity"> </span>
+                        <img src="./rain.png">
+                    </div>
+
+                </div>
+            </div>
+            <div class="chart" id="chart-container" style="width: 600px; height: 400px;"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+<script src="firebase-init.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.1.2/dist/echarts.min.js"></script>
+<script src="./Echarts.js"></script>
