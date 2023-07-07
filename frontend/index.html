@@ -12,10 +12,11 @@
 
 </head>
 
-<body>
+<body onload="displayDateTime()">
     <div class="data">
         <div class="title">
             <h2>&nbsp;<i class="fa-solid fa-mask"></i>&nbsp;溫溼度感測器</h2>
+            <div id="datetime" class="date"></div>
         </div>
 
         <div class="data-container">
@@ -38,7 +39,8 @@
 
                 </div>
             </div>
-            <div class="chart" id="chart-container" style="width: 600px; height: 400px;"></div>
+            <div class="chart" id="chart-container" style="width: 100%; height: 400px;"></div>
+
         </div>
     </div>
 
@@ -53,3 +55,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.2/dist/echarts.min.js"></script>
 <script src="./Echarts.js"></script>
+
+
+<script>
+    function displayDateTime() {
+        var currentDate = new Date();
+        var dateTimeString = currentDate.toLocaleString();
+        document.getElementById("datetime").innerHTML = dateTimeString;
+    }
+
+    // 每秒更新一次日期和時間
+    setInterval(displayDateTime, 1000);
+</script>

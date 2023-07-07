@@ -3,10 +3,19 @@ var chart = echarts.init(document.getElementById('chart-container'));
 
 // 定義圖表配置選項
 var option = {
+    grid: { // 
+        containLabel: true,
+        left: '5%',
+        right: '5%',
+        top: '10%',
+        bottom: '10%',
+    },
     title: { //標題
         text: '溫濕度歷史變化統計圖表'
     },
     legend: { //圖表數據title
+        top: 'auto',
+        bottom: 0,
         data: ['溫度', '濕度']
     },
     xAxis: { //x軸
@@ -49,8 +58,8 @@ var option = {
 chart.setOption(option);
 
 // 監聽firebase數據變化
-firebase.firestore().collection('sensorData').orderBy('timestamp', 'asc') // 根據讀取時間升續排列
-    //.limit(10) // 限制取得筆數
+firebase.firestore().collection('sensorData').orderBy('timestamp', 'desc') // 根據讀取時間升續排列
+    .limit(20) // 限制取得筆數
     .onSnapshot(function(querySnapshot) { //監聽 Firestore 中 "sensorData" 的變化
         //創建兩個空的，負責存溫度和濕度
         var temperatureData = [];
@@ -67,6 +76,18 @@ firebase.firestore().collection('sensorData').orderBy('timestamp', 'asc') // 根
 
         // 更新圖表資料
         chart.setOption({
+            grid: { // 
+                containLabel: true,
+                left: '5%',
+                right: '5%',
+                top: '15%',
+                bottom: '10%',
+            },
+            legend: { //圖表數據title
+                top: 'auto',
+                bottom: 0,
+                data: ['溫度', '濕度']
+            },
             xAxis: {
                 data: temperatureData // 顯示溫度
             },
@@ -84,6 +105,10 @@ firebase.firestore().collection('sensorData').orderBy('timestamp', 'asc') // 根
         });
     });
 
+// 畫面大小變化更新圖表
+window.addEventListener('resize', function() {
+    chart.resize();
+});
 
 /* // 創建一個變數來保存監聽器
 var unsubscribe = dataCollection.onSnapshot((snapshot) => {
