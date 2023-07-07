@@ -34,12 +34,14 @@
 
 7. 前端開發：使用 HTML、CSS 和 JavaScript，開發網頁前端來連接 Firebase，並即時顯示溫
 
-濕度數據。
+濕度數據。使用圖表庫，在前端應用程式中繪製溫濕度的歷史變化圖表。並且增加響應式網頁。
 
-8. 圖表繪製：使用圖表庫，在前端應用程式中繪製溫濕度的歷史變化圖表。
+8. 前後端部屬:後端使用zeabur進行部屬，前端使用vercel進行部屬。
+
+9. 使用github傳送彼此資料以及建立分支以便資料之傳遞。
 
 ## 網頁連結
-https://testdht-4odhv9vnp1gz.vercel.app/
+[https://testdht-4odhv9vnp1gz.vercel.app/](https://testdht-4odhv9vnp1gz.vercel.app/)
 
 ## 參考資源
 
