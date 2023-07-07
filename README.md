@@ -32,9 +32,7 @@
 
 6. 雲端連接：使用 Firebase 的 JavaScript SDK，在後端 API 中將溫濕度數據傳送到 Firebase。
 
-7. 前端開發：使用 HTML、CSS 和 JavaScript，開發網頁前端來連接 Firebase，並即時顯示溫
-
-濕度數據。使用圖表庫，在前端應用程式中繪製溫濕度的歷史變化圖表。並且增加響應式網頁。
+7. 前端開發：使用 HTML、CSS 和 JavaScript，開發網頁前端來連接 Firebase，並即時顯示溫濕度數據。使用圖表庫，在前端應用程式中繪製溫濕度的歷史變化圖表。並且增加響應式網頁。
 
 8. 前後端部屬:後端使用zeabur進行部屬，前端使用vercel進行部屬。
 
